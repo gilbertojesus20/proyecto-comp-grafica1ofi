@@ -65,6 +65,15 @@ function dibujarPoligonoRegular(contexto, n, r) {
     }
 }
 
+function dibujarEstrella(contexto, n, r) {
+    var f = n == 3 ? 1.6 : 1.8
+    for (var t = 0; t < n*2; t++) {
+        var p1 = puntoPoligono(r - (t % 2)*r/f, n*2, t, alto / 2);
+        var p2 = puntoPoligono(r - ((t+1) % 2)*r/f, n*2, t + 1, alto / 2);
+        Linea(contexto, p1.x, p1.y, p2.x, p2.y);
+    }
+}
+
 function dibujar_puntos_octantes(contexto, x, y, centroX, centroY) {
     dibujarPixel(contexto, centroX + x, centroY + y)
     dibujarPixel(contexto, centroX - x, centroY + y)
