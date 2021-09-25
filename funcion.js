@@ -31,6 +31,9 @@ function pintarSeleccionado(figura){
         case "Círculo":
             actualizar(contexto,ancho, alto, ()=>circuloBresenham(contexto, ancho/2, alto/2, r));
             break;
+        case "Estrella":
+            actualizar(contexto,ancho, alto, ()=>dibujarEstrella(contexto, 5, r));
+            break;
     }
 }
 
